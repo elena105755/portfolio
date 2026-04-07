@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <canvas
+      id="data-canvas"
+      class="data-canvas"
+      aria-hidden="true"
+    ></canvas>
     <header class="hero">
       <div class="container">
         <p class="eyebrow">Data Platforms • Backend • Cloud</p>
@@ -215,6 +220,65 @@
         </div>
       </section>
 
+      <section class="section section-alt data-flow-section">
+        <div class="container">
+          <h2>My Medallion Architecture</h2>
+          <p class="flow-intro">
+            This is the Medallion architecture pattern I use in my own work to
+            turn raw events into trusted, analytics-ready datasets and
+            production-facing outputs.
+          </p>
+          <div class="systems-lab">
+            <div class="lab-graph" id="lab-graph">
+              <svg class="lab-links" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M18 20 C30 24, 40 32, 50 42"></path>
+                <path d="M50 42 C54 50, 56 58, 57 66"></path>
+                <path d="M57 66 C65 68, 75 56, 82 40"></path>
+                <path d="M50 42 C60 34, 69 32, 82 40"></path>
+              </svg>
+              <div class="layer-card layer-bronze" data-layer="bronze">
+                <h3>Bronze</h3>
+                <p>Raw events from APIs, trackers, and logs.</p>
+              </div>
+              <div class="layer-card layer-silver" data-layer="silver">
+                <h3>Silver</h3>
+                <p>Validation, enrichment, dedupe, and session logic.</p>
+              </div>
+              <div class="layer-card layer-gold" data-layer="gold">
+                <h3>Gold</h3>
+                <p>Analytics-ready models powering decisions.</p>
+              </div>
+              <div class="layer-card layer-serve" data-layer="serve">
+                <h3>Serving</h3>
+                <p>Dashboards, APIs, and product features.</p>
+              </div>
+              <div class="packet p1"></div>
+              <div class="packet p2"></div>
+              <div class="packet p3"></div>
+            </div>
+
+            <div class="lab-side">
+              <article class="story-step" data-layer="bronze">
+                <h3>01 Capture reality</h3>
+                <p>Reliable ingestion first. No assumptions, no dropped edge cases.</p>
+              </article>
+              <article class="story-step" data-layer="silver">
+                <h3>02 Make data trustworthy</h3>
+                <p>Schema checks, late-arrival handling, and deterministic transforms.</p>
+              </article>
+              <article class="story-step" data-layer="gold">
+                <h3>03 Model for action</h3>
+                <p>Domain-ready datasets for experiments, forecasting, and KPIs.</p>
+              </article>
+              <article class="story-step" data-layer="serve">
+                <h3>04 Deliver to users</h3>
+                <p>Low-latency access paths that teams can depend on every day.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section section-cta">
         <div class="container">
           <h2>Let’s Build Reliable Data Systems</h2>
@@ -227,5 +291,6 @@
         </div>
       </section>
     </main>
+    <script src="./script.js"></script>
   </body>
 </html>
